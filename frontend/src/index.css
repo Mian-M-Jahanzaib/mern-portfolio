@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add this block */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px; /* Keeps the title visible below the sticky navbar */
+}
