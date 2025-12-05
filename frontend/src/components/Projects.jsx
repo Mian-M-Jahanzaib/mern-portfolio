@@ -24,7 +24,7 @@ const Projects = () => {
             title: "Portfolio", 
             tech: "React", 
             description: "This website.", 
-            image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            image: "/portfolio.jpg",
             // Since this IS the portfolio, linking to #home reloads the page nicely
             link: "#home"
         },
@@ -32,7 +32,7 @@ const Projects = () => {
             title: "Airline system", 
             tech: "HTML5, CSS3, JS", 
             description: "Clean and easy user interface.", 
-            image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            image: "/airline.jpg",
             // PASTE YOUR GITHUB LINK HERE
             link: "https://github.com/Mian-M-Jahanzaib/airline-system"
         },
