@@ -16,7 +16,7 @@ const Projects = () => {
             title: "DigiSphere", 
             tech: "PHP, MySql", 
             description: "Tech blogs/articles.", 
-            image: "/digi.jpg",
+            image: "/digi.avif",
             // PASTE YOUR LIVE LINK HERE
             link: "https://digisphere.wuaze.com" 
         },
@@ -40,7 +40,7 @@ const Projects = () => {
             title: "Bank Management", 
             tech: "C++, OOP", 
             description: "Real world bank management system.", 
-            image: "/bank.jpg",
+            image: "/bank.png",
             // PASTE YOUR GITHUB LINK HERE
             link: "https://github.com/Mian-M-Jahanzaib/MyCppProject/"
         }
