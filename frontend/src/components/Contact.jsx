@@ -7,7 +7,7 @@ const Contact = () => {
     visible: { 
       y: 0, 
       opacity: 1,
-      transition: { delay: 0.3, duration: 0.8, type: "spring", stiffness: 50, damping: 10 } 
+      transition: { delay: 0.1, duration: 0.8, type: "spring", stiffness: 50, damping: 10 } 
     }
   }
 
