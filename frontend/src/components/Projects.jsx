@@ -34,7 +34,7 @@ const Projects = () => {
             description: "Clean and easy user interface.", 
             image: "/airline.jpg",
             // PASTE YOUR GITHUB LINK HERE
-            link: "https://github.com/Mian-M-Jahanzaib/airline-system"
+            link: "https://github.com/Mian-M-Jahanzaib/airline_system"
         },
         { 
             title: "Bank Management", 
