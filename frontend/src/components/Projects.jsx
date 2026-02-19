@@ -12,12 +12,18 @@ const Projects = () => {
     }
 
     const projects = [
+        {
+            title: "HabitGrid",
+            description: "A full-stack habit tracking application featuring data visualization via heatmaps, streak calculations, and consistency tracking.",
+            image: "/HabitGrid.png", 
+            tech: "React, Tailwind CSS, Node.js, SQLite", // Changed from tags array to tech string
+            link: "https://github.com/Mian-M-Jahanzaib/habit-grid", 
+        },
         { 
             title: "DigiSphere", 
             tech: "PHP, MySql", 
             description: "Tech blogs/articles.", 
             image: "/digi.avif",
-            // PASTE YOUR LIVE LINK HERE
             link: "https://digisphere.wuaze.com" 
         },
         { 
@@ -25,7 +31,6 @@ const Projects = () => {
             tech: "React", 
             description: "This website.", 
             image: "/portfolio.jpg",
-            // Since this IS the portfolio, linking to #home reloads the page nicely
             link: "#home"
         },
         { 
@@ -33,7 +38,6 @@ const Projects = () => {
             tech: "HTML5, CSS3, JS", 
             description: "Clean and easy user interface.", 
             image: "/airline.jpg",
-            // PASTE YOUR GITHUB LINK HERE
             link: "https://github.com/Mian-M-Jahanzaib/airline_system"
         },
         { 
@@ -41,7 +45,6 @@ const Projects = () => {
             tech: "C++, OOP", 
             description: "Real world bank management system.", 
             image: "/bank.png",
-            // PASTE YOUR GITHUB LINK HERE
             link: "https://github.com/Mian-M-Jahanzaib/MyCppProject/"
         }
     ];
@@ -62,13 +65,10 @@ const Projects = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {projects.map((project, index) => (
-                    // CHANGED: Wrapped the card in an <a> tag
-                    // target="_blank" opens it in a new tab
-                    // rel="noopener noreferrer" is for security
                     <a 
                         key={index} 
                         href={project.link}
-                        target={project.link.startsWith('#') ? "_self" : "_blank"} // Don't open new tab for internal links
+                        target={project.link.startsWith('#') ? "_self" : "_blank"} 
                         rel="noopener noreferrer"
                         className="group relative bg-white border-2 border-green-900 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#14532d] block cursor-pointer"
                     >
@@ -79,7 +79,6 @@ const Projects = () => {
                                 alt={project.title} 
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             />
-                            {/* Overlay icon appears on hover */}
                             <div className="absolute inset-0 bg-green-900/0 group-hover:bg-green-900/20 transition-colors duration-300 flex items-center justify-center">
                                 <span className="material-symbols-outlined text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-md">
                                     open_in_new

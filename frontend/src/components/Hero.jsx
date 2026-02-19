@@ -51,7 +51,7 @@ const Hero = () => {
             <div className="relative mx-auto w-60 h-60 mb-6">
                 <div className="absolute inset-0 bg-yellow-300 border-4 border-slate-800 rounded-[30%_70%_70%_30%/30%_30%_70%_70%] rotate-6 shadow-[4px_4px_0px_0px_rgba(30,41,59,1)]"></div>
                 <div className="relative w-full h-full rounded-full border-4 border-slate-800 overflow-hidden bg-gray-300 z-10 bg-cover bg-center"
-                     style={{ backgroundImage: "url('/profile.jpg')" }}>
+                     style={{ backgroundImage: "url('/profile.jpeg')" }}>
                 </div>
             </div>
 
