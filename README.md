@@ -28,34 +28,38 @@ To run this project locally, follow these steps:
 
 ### Installation
 1. Clone the repository:
-   ```bash
-   git clone [https://github.com/Mian-M-Jahanzaib/mern-portfolio.git](https://github.com/Mian-M-Jahanzaib/mern-portfolio.git)
-Install Backend Dependencies:
 
-Bash
-npm install
-Install Frontend Dependencies:
+        git clone https://github.com/Mian-M-Jahanzaib/mern-portfolio.git
 
-Bash
-cd frontend
-npm install
-Environment Variables
-Create a .env file in the root directory. You will need to add your own MongoDB URI:
+2. Install Backend Dependencies:
 
-Code snippet
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-(Note: Never commit your .env file to GitHub)
+        cd backend
+        npm install
 
-Running the Application
-Start the Backend server (from the root directory):
+3. Install Frontend Dependencies:
 
-Bash
-node server.js
-Start the Frontend development server (in a new terminal):
+        cd ../frontend
+        npm install
 
-Bash
-cd frontend
-npm run dev
-👨‍💻 Author
-Mian Muhammad Jahanzaib
+### Environment Variables
+Create a `.env` file in the `backend` directory. You will need to add your own MongoDB URI:
+
+        PORT=5000
+        MONGO_URI=your_mongodb_connection_string
+
+*(Note: Never commit your `.env` file to GitHub)*
+
+### Running the Application
+1. Start the Backend server:
+
+        cd backend
+        node server.js
+
+2. Start the Frontend development server (in a new terminal):
+
+        cd frontend
+        npm run dev
+
+## 👨‍💻 Author
+**Mian Muhammad Jahanzaib**
+* **LinkedIn:** [Mian M Jahanzaib](https://linkedin.com/in/mian-m-jahanzaib-7b8aa7357)
