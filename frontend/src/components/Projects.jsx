@@ -23,7 +23,7 @@ const Projects = () => {
             title: "DigiSphere", 
             tech: "PHP, MySql", 
             description: "Tech blogs/articles.", 
-            image: "/digi.avif",
+            image: "/digi.png",
             link: "https://digisphere.wuaze.com" 
         },
         { 
