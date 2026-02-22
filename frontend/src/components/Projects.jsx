@@ -45,7 +45,7 @@ const Projects = () => {
             tech: "C++, OOP", 
             description: "Real world bank management system.", 
             image: "/bank.png",
-            link: "https://github.com/Mian-M-Jahanzaib/MyCppProject/"
+            link: "https://github.com/Mian-M-Jahanzaib/Bank-Management-System-Cpp"
         }
     ];
 
