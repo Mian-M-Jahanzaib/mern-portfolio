@@ -11,7 +11,6 @@ const Contact = () => {
     }
   }
 
-  // 1. State to store form data
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,21 +18,17 @@ const Contact = () => {
     message: ''
   });
 
-  // 2. State for status messages (Loading, Success, Error)
   const [status, setStatus] = useState(null);
 
-  // 3. Handle Input Change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // 4. Handle Form Submit
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Stop page from reloading
+    e.preventDefault(); 
     setStatus("sending");
 
     try {
-      // Send data to your Backend
       const response = await fetch('https://mern-portfolio-eckd.onrender.com/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -42,7 +37,7 @@ const Contact = () => {
 
       if (response.ok) {
         setStatus("success");
-        setFormData({ name: '', email: '', subject: '', message: '' }); // Clear form
+        setFormData({ name: '', email: '', subject: '', message: '' }); 
       } else {
         setStatus("error");
       }
@@ -66,13 +61,14 @@ const Contact = () => {
                 Get In Touch
             </motion.h2>
 
-            <div className="flex flex-col md:flex-row gap-8">
+            {/* Added md:items-start here so the columns don't stretch each other */}
+            <div className="flex flex-col md:flex-row gap-10 md:items-start">
                 
-                {/* Left Side: Info */}
-                <div className="w-full md:w-1/3 flex flex-col gap-6">
+                {/* Left Side: Info & Freelance Links */}
+                <div className="w-full md:w-[45%] flex flex-col gap-6 h-fit">
                     <p className="text-purple-800 text-sm leading-relaxed font-medium">
                         I'm currently available for freelance projects or full-time opportunities. 
-                        Let's discuss your next big idea.
+                        Use the form to test my backend logic, or hire me directly via the platforms below!
                     </p>
                     
                     <div className="flex items-start gap-4">
@@ -93,8 +89,7 @@ const Contact = () => {
                         </div>
                         <div>
                             <h3 className="text-purple-900 font-bold text-sm">WhatsApp</h3>
-                            {/* Replace with your number */}
-                            <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" className="text-purple-700 text-xs font-medium hover:underline hover:text-purple-900 transition-colors">
+                            <a href="https://wa.me/923711570073" target="_blank" rel="noopener noreferrer" className="text-purple-700 text-xs font-medium hover:underline hover:text-purple-900 transition-colors">
                                 +92 371 1570073
                             </a>
                         </div>
@@ -106,15 +101,33 @@ const Contact = () => {
                         </div>
                         <div>
                             <h3 className="text-purple-900 font-bold text-sm">Location</h3>
-                            <p className="text-purple-700 text-xs font-medium">Mandi Bahauddin, Punjab, Pakistan</p>
+                            <p className="text-purple-700 text-xs font-medium">Mandi Bahauddin, Punjab</p>
                         </div>
                     </div>
+
+                    {/* Freelance Platforms Section */}
+                    <div className="mt-2 pt-6 border-t-2 border-purple-200">
+                        <h3 className="text-purple-900 font-black text-sm uppercase mb-4 tracking-wide">Hire Me Directly</h3>
+                        <div className="flex flex-wrap gap-4">
+                            {/* Upwork Button - Official Green */}
+                            <a href="https://www.upwork.com/freelancers/~0156dbf67a8031770f" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#14a800] text-white px-5 py-2.5 rounded-lg font-bold border-2 border-purple-900 shadow-[2px_2px_0px_0px_rgba(88,28,135,1)] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(88,28,135,1)] transition-all">
+                                <img src="https://cdn.simpleicons.org/upwork/white" alt="Upwork" className="w-5 h-5" />
+                                Upwork
+                            </a>
+                            {/* Contra Button - Official Dark Theme w/ Sparkle */}
+                            <a href="https://contra.com/mian_muhammad_jahanzaib_ghfk6rzm/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#111111] text-white px-5 py-2.5 rounded-lg font-bold border-2 border-purple-900 shadow-[2px_2px_0px_0px_rgba(88,28,135,1)] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(88,28,135,1)] transition-all">
+                                <span className="material-symbols-outlined text-[18px] text-[#ff98a0]">auto_awesome</span>
+                                Contra
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
 
-                {/* Right Side: The Form */}
-                <div className="w-full md:w-2/3 bg-white border-2 border-purple-900 rounded-xl p-6 shadow-sm">
-                    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Right Side: The Form (Added h-fit to stop it from stretching downwards) */}
+                <div className="w-full md:w-[55%] bg-white border-2 border-purple-900 rounded-xl p-6 shadow-sm h-fit">
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                             <div className="flex flex-col gap-1">
                                 <label className="text-xs font-bold text-purple-900">Name</label>
                                 <input 
@@ -145,7 +158,7 @@ const Contact = () => {
                         <div className="flex flex-col gap-1">
                             <label className="text-xs font-bold text-purple-900">Message</label>
                             <textarea 
-                                name="message" rows="4" required value={formData.message} onChange={handleChange}
+                                name="message" rows="3" required value={formData.message} onChange={handleChange}
                                 placeholder="How can I help you?" 
                                 className="border-2 border-purple-200 rounded p-2 text-sm focus:outline-none focus:border-purple-600 transition-all resize-none font-medium text-purple-900"
                             ></textarea>
@@ -154,17 +167,17 @@ const Contact = () => {
                         <button 
                             type="submit" 
                             disabled={status === "sending"}
-                            className="bg-purple-600 border-2 border-purple-900 text-white font-bold py-2 px-6 rounded-lg hover:bg-purple-700 hover:shadow-[4px_4px_0px_0px_#581c87] transition-all self-start mt-2 active:translate-y-[2px] active:shadow-none disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="bg-purple-600 border-2 border-purple-900 text-white font-bold py-2 px-6 rounded-lg hover:bg-purple-700 hover:shadow-[4px_4px_0px_0px_#581c87] transition-all self-start mt-1 active:translate-y-[2px] active:shadow-none disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             {status === "sending" ? "Sending..." : "Send Message"}
                         </button>
 
                         {/* Status Messages */}
                         {status === "success" && (
-                            <p className="text-green-600 text-sm font-bold mt-2">✅ Message sent successfully!</p>
+                            <p className="text-green-600 text-sm font-bold mt-1">✅ Message sent successfully!</p>
                         )}
                         {status === "error" && (
-                            <p className="text-red-600 text-sm font-bold mt-2">❌ Something went wrong. Try again.</p>
+                            <p className="text-red-600 text-sm font-bold mt-1">❌ Something went wrong. Try again.</p>
                         )}
                     </form>
                 </div>

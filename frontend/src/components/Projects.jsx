@@ -14,36 +14,36 @@ const Projects = () => {
     const projects = [
         {
             title: "HabitGrid",
-            description: "A full-stack habit tracking application featuring data visualization via heatmaps, streak calculations, and consistency tracking.",
+            description: "A full-stack tracking application featuring interactive heatmap data visualization, streak calculations, and secure data persistence.",
             image: "/HabitGrid.png", 
-            tech: "React, Tailwind CSS, Node.js, SQLite", // Changed from tags array to tech string
+            tech: "React, Tailwind, Node.js, SQLite", 
             link: "https://github.com/Mian-M-Jahanzaib/habit-grid", 
         },
         { 
             title: "DigiSphere", 
-            tech: "PHP, MySql", 
-            description: "Tech blogs/articles.", 
+            tech: "Core PHP, MySQL, JS", 
+            description: "Dynamic tech blog platform built from scratch with a relational database designed for complex content routing and user sessions.", 
             image: "/digi.png",
             link: "https://digisphere.wuaze.com" 
         },
         { 
-            title: "Portfolio", 
-            tech: "React", 
-            description: "This website.", 
+            title: "MERN Portfolio", 
+            tech: "React, Tailwind, Express", 
+            description: "High-performance personal portfolio featuring a custom Neo-Brutalist UI, Framer Motion animations, and automated CI/CD deployment.", 
             image: "/portfolio.jpg",
             link: "#home"
         },
         { 
-            title: "Airline system", 
-            tech: "HTML5, CSS3, JS", 
-            description: "Clean and easy user interface.", 
+            title: "Airline Booking System", 
+            tech: "HTML5, CSS3, JS, React", 
+            description: "Responsive airline booking interface demonstrating advanced UI/UX principles, accessible design, and clean component architecture.", 
             image: "/airline.jpg",
             link: "https://github.com/Mian-M-Jahanzaib/airline_system"
         },
         { 
-            title: "Bank Management", 
+            title: "Bank Management (BMS)", 
             tech: "C++, OOP", 
-            description: "Real world bank management system.", 
+            description: "Complex Object-Oriented Programming (OOP) application simulating secure banking operations, memory allocation, and file handling.", 
             image: "/bank.png",
             link: "https://github.com/Mian-M-Jahanzaib/Bank-Management-System-Cpp"
         }
@@ -70,34 +70,38 @@ const Projects = () => {
                         href={project.link}
                         target={project.link.startsWith('#') ? "_self" : "_blank"} 
                         rel="noopener noreferrer"
-                        className="group relative bg-white border-2 border-green-900 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#14532d] block cursor-pointer"
+                        // Wrapped in a div to ensure the entire card is clickable and animation stays smooth
+                        className="group relative bg-white border-2 border-green-900 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#14532d] flex flex-col cursor-pointer"
                     >
                         
-                        <div className="h-48 w-full border-b-2 border-green-900 overflow-hidden relative">
+                        {/* UPDATED: Changed height from h-48 to h-64 for larger images */}
+                        <div className="h-64 w-full border-b-2 border-green-900 overflow-hidden relative bg-green-100">
                             <img 
                                 src={project.image} 
                                 alt={project.title} 
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                // UPDATED: Added object-top so website screenshots don't cut off the navbar
+                                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                             />
-                            <div className="absolute inset-0 bg-green-900/0 group-hover:bg-green-900/20 transition-colors duration-300 flex items-center justify-center">
+                            <div className="absolute inset-0 bg-green-900/0 group-hover:bg-green-900/20 transition-colors duration-300 flex items-center justify-center pointer-events-none">
                                 <span className="material-symbols-outlined text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-md">
                                     open_in_new
                                 </span>
                             </div>
                         </div>
                         
-                        <div className="p-6">
-                            <span className="inline-block py-1 px-3 rounded-full bg-green-900 text-white text-[10px] font-bold tracking-wider mb-2">
+                        {/* Made the text container flex-grow so the cards line up evenly if text lengths differ */}
+                        <div className="p-6 flex flex-col flex-grow">
+                            <span className="inline-block py-1 px-3 rounded-full bg-green-900 text-white text-[10px] font-bold tracking-wider mb-3 w-fit">
                                 {project.tech}
                             </span>
-                            <h3 className="text-xl font-bold text-green-900">
+                            <h3 className="text-xl font-black text-green-900 mb-2">
                                 {project.title}
                             </h3>
-                            <p className="text-green-800 text-sm mt-3 font-medium">
+                            <p className="text-green-800 text-sm font-medium leading-relaxed flex-grow">
                                 {project.description}
                             </p>
                             
-                            <div className="mt-4 flex items-center gap-2 text-sm font-bold text-green-900 group-hover:underline">
+                            <div className="mt-5 flex items-center gap-2 text-sm font-black text-green-900 group-hover:underline">
                                 View Project 
                                 <span className="material-symbols-outlined text-sm">arrow_forward</span>
                             </div>

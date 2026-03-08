@@ -27,33 +27,34 @@ const Experience = () => {
 
             <div className="relative border-l-4 border-rose-900 ml-3 md:ml-6 space-y-8">
                 
-                {/* Job 1 (Current) */}
+                {/* Job 1 (Current) - MERN Stack */}
                 <div className="relative pl-8 md:pl-12">
+                    {/* Active indicator dot */}
                     <div className="absolute -left-[10px] top-2 h-6 w-6 rounded-full bg-rose-500 border-4 border-rose-900 ring-4 ring-rose-50"></div>
                     
                     <div className="bg-white border-2 border-rose-900 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#881337]">
                         <div className="flex justify-between items-start gap-4">
                             <div>
                                 <span className="text-xs font-black text-rose-600 bg-rose-100 px-2 py-1 rounded border border-rose-200 uppercase tracking-wide">
-                                    2025(June) - Present
+                                    Early 2026 - Present
                                 </span>
-                                <h3 className="text-lg font-bold text-rose-900 mt-2">Full-Stack PHP Developer</h3>
-                                <p className="text-sm font-bold text-rose-700 mb-2">Digisphere</p>
+                                <h3 className="text-lg font-bold text-rose-900 mt-2">Full-Stack Web Developer</h3>
+                                <p className="text-sm font-bold text-rose-700 mb-2">HabitGrid & Portfolio</p>
                                 <p className="text-sm text-rose-800 font-medium leading-relaxed max-w-md">
-                                    Leading development using PHP, MySql, JS, HTML and CSS.
+                                    Architected high-performance applications using the MERN stack and SQLite, deploying via automated CI/CD pipelines.
                                 </p>
                             </div>
-                            {/* PHP Icon */}
+                            {/* React Icon */}
                             <img 
-                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" 
-                                alt="PHP Logo" 
-                                className="w-16 h-16 object-contain border-2 border-rose-100 rounded-lg p-2 bg-rose-50" 
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" 
+                                alt="React Logo" 
+                                className="w-16 h-16 object-contain border-2 border-rose-100 rounded-lg p-2 bg-rose-50 hidden sm:block" 
                             />
                         </div>
                     </div>
                 </div>
 
-                {/* Job 2 */}
+                {/* Job 2 - DigiSphere */}
                 <div className="relative pl-8 md:pl-12">
                     <div className="absolute -left-[10px] top-2 h-6 w-6 rounded-full bg-white border-4 border-rose-900 ring-4 ring-rose-50"></div>
                     
@@ -61,25 +62,51 @@ const Experience = () => {
                         <div className="flex justify-between items-start gap-4">
                             <div>
                                 <span className="text-xs font-black text-rose-900 bg-rose-100 px-2 py-1 rounded border border-rose-200 uppercase tracking-wide">
-                                    2024 - 2025
+                                    2025
                                 </span>
-                                <h3 className="text-lg font-bold text-rose-900 mt-2">Front-End Web Developer</h3>
-                                <p className="text-sm font-bold text-rose-700 mb-2">Personal Projects</p>
+                                <h3 className="text-lg font-bold text-rose-900 mt-2">Full-Stack PHP Developer</h3>
+                                <p className="text-sm font-bold text-rose-700 mb-2">DigiSphere</p>
                                 <p className="text-sm text-rose-800 font-medium leading-relaxed max-w-md">
-                                    Created responsive, clean and easy to navigate websites.
+                                    Built and deployed a dynamic tech blog platform from scratch using Core PHP, JavaScript, and a relational MySQL database.
                                 </p>
                             </div>
-                            {/* HTML5 Icon */}
+                            {/* PHP Icon */}
                             <img 
-                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" 
-                                alt="HTML Logo" 
-                                className="w-16 h-16 object-contain border-2 border-rose-100 rounded-lg p-2 bg-rose-50" 
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" 
+                                alt="PHP Logo" 
+                                className="w-16 h-16 object-contain border-2 border-rose-100 rounded-lg p-2 bg-rose-50 hidden sm:block" 
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                {/* Job 3 - Airline System */}
+                <div className="relative pl-8 md:pl-12">
+                    <div className="absolute -left-[10px] top-2 h-6 w-6 rounded-full bg-white border-4 border-rose-900 ring-4 ring-rose-50"></div>
+                    
+                    <div className="bg-white border-2 border-rose-900 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#881337]">
+                        <div className="flex justify-between items-start gap-4">
+                            <div>
+                                <span className="text-xs font-black text-rose-900 bg-rose-100 px-2 py-1 rounded border border-rose-200 uppercase tracking-wide">
+                                    2024
+                                </span>
+                                <h3 className="text-lg font-bold text-rose-900 mt-2">Front-End Project Lead</h3>
+                                <p className="text-sm font-bold text-rose-700 mb-2">Airline Management System</p>
+                                <p className="text-sm text-rose-800 font-medium leading-relaxed max-w-md">
+                                    Spearheaded a team to build a responsive airline booking interface using React, JavaScript, HTML, and CSS.
+                                </p>
+                            </div>
+                            {/* JavaScript Icon */}
+                            <img 
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" 
+                                alt="JS Logo" 
+                                className="w-16 h-16 object-contain border-2 border-rose-100 rounded-lg p-2 bg-rose-50 hidden sm:block" 
                             />
                         </div>
                     </div>
                 </div>
                 
-                 {/* Job 3 */}
+                 {/* Job 4 - C++ */}
                  <div className="relative pl-8 md:pl-12">
                     <div className="absolute -left-[10px] top-2 h-6 w-6 rounded-full bg-white border-4 border-rose-900 ring-4 ring-rose-50"></div>
                     
@@ -87,16 +114,19 @@ const Experience = () => {
                         <div className="flex justify-between items-start gap-4">
                              <div>
                                 <span className="text-xs font-black text-rose-900 bg-rose-100 px-2 py-1 rounded border border-rose-200 uppercase tracking-wide">
-                                    2023 - 2024
+                                    2023
                                 </span>
-                                <h3 className="text-lg font-bold text-rose-900 mt-2">C++ Programmer</h3>
-                                <p className="text-sm font-bold text-rose-700 mb-2">Real-World Projects</p>
+                                <h3 className="text-lg font-bold text-rose-900 mt-2">C++ Project Manager</h3>
+                                <p className="text-sm font-bold text-rose-700 mb-2">Bank Management System (BMS)</p>
+                                <p className="text-sm text-rose-800 font-medium leading-relaxed max-w-md">
+                                    Led a team to architect 8 complex Object-Oriented Programming (OOP) projects, handling memory allocation and data structures.
+                                </p>
                             </div>
                             {/* C++ Icon */}
                             <img 
                                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" 
                                 alt="C++ Logo" 
-                                className="w-16 h-16 object-contain border-2 border-rose-100 rounded-lg p-2 bg-rose-50" 
+                                className="w-16 h-16 object-contain border-2 border-rose-100 rounded-lg p-2 bg-rose-50 hidden sm:block" 
                             />
                         </div>
                     </div>
