@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
-const nodemailer = require('nodemailer'); // 1. Import Nodemailer
 
 const app = express();
 
@@ -41,17 +40,6 @@ const contactSchema = new mongoose.Schema({
 });
 const Contact = mongoose.model('Contact', contactSchema);
 
-// --- 2. NODEMAILER CONFIGURATION ---
-const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true, // Forces SSL connection
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    }
-});
-
 // --- API ROUTE ---
 app.post('/api/contact', async (req, res) => {
   try {
@@ -61,23 +49,11 @@ app.post('/api/contact', async (req, res) => {
         return res.status(400).json({ success: false, message: "All fields are required." });
     }
 
-    // Save to Database
+    // Save strictly to Database
     const newMessage = new Contact({ name, email, subject, message });
     await newMessage.save();
 
-    // 3. SEND EMAIL NOTIFICATION
-    const mailOptions = {
-        from: process.env.EMAIL_USER,
-        to: process.env.EMAIL_USER, // Sends the email TO yourself
-        subject: `New Portfolio Message: ${subject}`,
-        text: `You have a new message from ${name} (${email}):\n\n${message}`
-    };
-
-    transporter.sendMail(mailOptions, (err, info) => {
-        if (err) console.error("📧 Email Error:", err);
-        else console.log("📧 Email Sent: " + info.response);
-    });
-
+    console.log("📩 New Message Saved:", name);
     res.status(201).json({ success: true, message: "Message Sent Successfully!" });
   } catch (error) {
     console.error("Server Error:", error);
