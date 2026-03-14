@@ -5,7 +5,6 @@ const cors = require('cors');
 
 // --- NEW SECURITY PACKAGES ---
 const helmet = require('helmet');
-const mongoSanitize = require('express-mongo-sanitize');
 const rateLimit = require('express-rate-limit');
 
 const app = express();
@@ -24,9 +23,6 @@ app.use(cors(corsOptions));
 
 // 3. Body Parser Limit: Prevents attackers from sending massive 50MB payloads to crash your server
 app.use(express.json({ limit: '10kb' }));
-
-// 4. Mongo Sanitize: Prevents NoSQL Injection (strips out malicious $ and . characters)
-app.use(mongoSanitize());
 
 // 5. Rate Limiter: Stops spam bots. Maximum 5 messages per IP address every 15 minutes.
 const apiLimiter = rateLimit({
