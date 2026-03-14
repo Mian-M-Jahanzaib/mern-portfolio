@@ -2,78 +2,83 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-
-// --- NEW SECURITY PACKAGES ---
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const nodemailer = require('nodemailer'); // 1. Import Nodemailer
 
 const app = express();
 
-// --- SECURITY MIDDLEWARE PIPELINE ---
-
-// 1. Helmet: Hides your Express server details and secures HTTP headers
+// --- SECURITY MIDDLEWARE ---
 app.use(helmet());
-
-// 2. Strict CORS: Only allows your specific frontend URL to talk to this database
 const corsOptions = {
-    origin: 'https://mian-m-jahanzaib.onrender.com', // Blocks all other websites
+    origin: 'https://mian-m-jahanzaib.onrender.com',
     optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
-
-// 3. Body Parser Limit: Prevents attackers from sending massive 50MB payloads to crash your server
 app.use(express.json({ limit: '10kb' }));
 
-// 5. Rate Limiter: Stops spam bots. Maximum 5 messages per IP address every 15 minutes.
 const apiLimiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
+    windowMs: 15 * 60 * 1000,
     max: 5,
-    message: { success: false, message: "Too many messages sent from this IP, please try again later." }
+    message: { success: false, message: "Too many messages, try again later." }
 });
-// Apply the rate limiter strictly to the contact route
 app.use('/api/contact', apiLimiter);
 
-
-// --- DATABASE CONNECTION ---
+// --- DATABASE ---
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB Connected Successfully"))
   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
-// --- STEP 1: Define the Schema (Now with strict data limits) ---
 const contactSchema = new mongoose.Schema({
-  name: { type: String, required: true, trim: true, maxLength: 100 },
-  email: { type: String, required: true, trim: true, lowercase: true },
-  subject: { type: String, required: true, trim: true, maxLength: 200 },
-  message: { type: String, required: true, trim: true, maxLength: 2000 },
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  subject: { type: String, required: true },
+  message: { type: String, required: true },
   date: { type: Date, default: Date.now }
 });
-
 const Contact = mongoose.model('Contact', contactSchema);
 
-// --- STEP 2: Create the API Route ---
+// --- 2. NODEMAILER CONFIGURATION ---
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+    }
+});
+
+// --- API ROUTE ---
 app.post('/api/contact', async (req, res) => {
   try {
     const { name, email, subject, message } = req.body;
 
-    // Extra validation layer just in case
     if (!name || !email || !subject || !message) {
         return res.status(400).json({ success: false, message: "All fields are required." });
     }
 
+    // Save to Database
     const newMessage = new Contact({ name, email, subject, message });
     await newMessage.save();
 
+    // 3. SEND EMAIL NOTIFICATION
+    const mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: process.env.EMAIL_USER, // Sends the email TO yourself
+        subject: `New Portfolio Message: ${subject}`,
+        text: `You have a new message from ${name} (${email}):\n\n${message}`
+    };
+
+    transporter.sendMail(mailOptions, (err, info) => {
+        if (err) console.error("📧 Email Error:", err);
+        else console.log("📧 Email Sent: " + info.response);
+    });
+
     res.status(201).json({ success: true, message: "Message Sent Successfully!" });
-    console.log("📩 New Message Saved:", name);
   } catch (error) {
-    // We don't send the exact error message to the frontend anymore (security best practice)
     console.error("Server Error:", error);
     res.status(500).json({ success: false, message: "Internal Server Error" });
   }
 });
 
-// Start Server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-});
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
