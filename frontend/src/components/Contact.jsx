@@ -61,7 +61,6 @@ const Contact = () => {
                 Get In Touch
             </motion.h2>
 
-            {/* Added md:items-start here so the columns don't stretch each other */}
             <div className="flex flex-col md:flex-row gap-10 md:items-start">
                 
                 {/* Left Side: Info & Freelance Links */}
@@ -108,23 +107,34 @@ const Contact = () => {
                     {/* Freelance Platforms Section */}
                     <div className="mt-2 pt-6 border-t-2 border-purple-200">
                         <h3 className="text-purple-900 font-black text-sm uppercase mb-4 tracking-wide">Hire Me Directly</h3>
-                        <div className="flex flex-wrap gap-4">
-                            {/* Upwork Button - Official Green */}
-                            <a href="https://www.upwork.com/freelancers/~0156dbf67a8031770f" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#14a800] text-white px-5 py-2.5 rounded-lg font-bold border-2 border-purple-900 shadow-[2px_2px_0px_0px_rgba(88,28,135,1)] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(88,28,135,1)] transition-all">
+                        <div className="flex flex-wrap gap-4 items-center">
+                            
+                            {/* Upwork Button (Flat default, shadow on hover) */}
+                            <a href="https://www.upwork.com/freelancers/~0156dbf67a8031770f?mp_source=share" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#14a800] text-white px-5 py-2.5 rounded-lg font-bold border-2 border-purple-900 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(88,28,135,1)] transition-all h-[44px]">
                                 <img src="https://cdn.simpleicons.org/upwork/white" alt="Upwork" className="w-5 h-5" />
                                 Upwork
                             </a>
-                            {/* Contra Button - Official Dark Theme w/ Sparkle */}
-                            <a href="https://contra.com/mian_muhammad_jahanzaib_ghfk6rzm/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#111111] text-white px-5 py-2.5 rounded-lg font-bold border-2 border-purple-900 shadow-[2px_2px_0px_0px_rgba(88,28,135,1)] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(88,28,135,1)] transition-all">
-                                <span className="material-symbols-outlined text-[18px] text-[#ff98a0]">auto_awesome</span>
+
+                            {/* Contra Button (Flat default, shadow on hover) */}
+                            <a href="https://contra.com/mian_m_jahanzaib" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#111111] text-white px-5 py-2.5 rounded-lg font-bold border-2 border-purple-900 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(88,28,135,1)] transition-all h-[44px]">
+                                <svg className="w-4 h-4 text-[#FFD700]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 0C12 6.62742 17.3726 12 24 12C17.3726 12 12 17.3726 12 24C12 17.3726 6.62742 12 0 12C6.62742 12 12 6.62742 12 0Z" />
+                                </svg>
                                 Contra
                             </a>
+
+                            {/* Freelancer Button (Flat default, shadow on hover) */}
+                            <a href="https://www.freelancer.pk/u/mmjdeveloper?sb=t&frm=mmjdeveloper" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#29b2fe] text-white px-5 py-2.5 rounded-lg font-bold border-2 border-purple-900 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(88,28,135,1)] transition-all h-[44px]">
+                                <img src="https://cdn.simpleicons.org/freelancer/white" alt="Freelancer" className="w-5 h-5" />
+                                Freelancer
+                            </a>
+
                         </div>
                     </div>
 
                 </div>
 
-                {/* Right Side: The Form (Added h-fit to stop it from stretching downwards) */}
+                {/* Right Side: The Form */}
                 <div className="w-full md:w-[55%] bg-white border-2 border-purple-900 rounded-xl p-6 shadow-sm h-fit">
                     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">

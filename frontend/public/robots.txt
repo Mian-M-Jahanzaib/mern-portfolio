@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mian-m-jahanzaib.onrender.com/sitemap.xml
