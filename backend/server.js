@@ -8,6 +8,9 @@ const nodemailer = require('nodemailer'); // 1. Import Nodemailer
 
 const app = express();
 
+// Tell Express to trust the Render reverse proxy for the Rate Limiter
+app.set('trust proxy', 1);
+
 // --- SECURITY MIDDLEWARE ---
 app.use(helmet());
 const corsOptions = {
@@ -40,7 +43,9 @@ const Contact = mongoose.model('Contact', contactSchema);
 
 // --- 2. NODEMAILER CONFIGURATION ---
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // Forces SSL connection
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
