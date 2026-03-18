@@ -7,13 +7,15 @@ const rateLimit = require('express-rate-limit');
 
 const app = express();
 
-// Tell Express to trust the Render reverse proxy for the Rate Limiter
+// Tell Express to trust reverse proxies (Useful for cloud deployments)
 app.set('trust proxy', 1);
 
 // --- SECURITY MIDDLEWARE ---
 app.use(helmet());
+
+// TEMPLATE NOTE: Change this origin to your live frontend URL when deploying
 const corsOptions = {
-    origin: 'https://mian-m-jahanzaib.onrender.com',
+    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
     optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));

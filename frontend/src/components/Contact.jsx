@@ -29,7 +29,10 @@ const Contact = () => {
     setStatus("sending");
 
     try {
-      const response = await fetch('https://mern-portfolio-eckd.onrender.com/api/contact', {
+      // TEMPLATE NOTE: Replace this with your actual backend endpoint when deploying
+      const API_URL = 'http://localhost:5000/api/contact'; 
+
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -76,8 +79,8 @@ const Contact = () => {
                         </div>
                         <div>
                             <h3 className="text-purple-900 font-bold text-sm">Email Me</h3>
-                            <a href="mailto:jahanzaibm120@gmail.com" className="text-purple-700 text-xs font-medium hover:underline hover:text-purple-900 transition-colors">
-                                jahanzaibm120@gmail.com
+                            <a href="mailto:your.email@example.com" className="text-purple-700 text-xs font-medium hover:underline hover:text-purple-900 transition-colors">
+                                your.email@example.com
                             </a>
                         </div>
                     </div>
@@ -88,8 +91,8 @@ const Contact = () => {
                         </div>
                         <div>
                             <h3 className="text-purple-900 font-bold text-sm">WhatsApp</h3>
-                            <a href="https://wa.me/923711570073" target="_blank" rel="noopener noreferrer" className="text-purple-700 text-xs font-medium hover:underline hover:text-purple-900 transition-colors">
-                                +92 371 1570073
+                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-purple-700 text-xs font-medium hover:underline hover:text-purple-900 transition-colors">
+                                +1 234 567 8900
                             </a>
                         </div>
                     </div>
@@ -100,7 +103,7 @@ const Contact = () => {
                         </div>
                         <div>
                             <h3 className="text-purple-900 font-bold text-sm">Location</h3>
-                            <p className="text-purple-700 text-xs font-medium">Mandi Bahauddin, Punjab</p>
+                            <p className="text-purple-700 text-xs font-medium">City, Country</p>
                         </div>
                     </div>
 
@@ -109,22 +112,22 @@ const Contact = () => {
                         <h3 className="text-purple-900 font-black text-sm uppercase mb-4 tracking-wide">Hire Me Directly</h3>
                         <div className="flex flex-wrap gap-4 items-center">
                             
-                            {/* Upwork Button (Flat default, shadow on hover) */}
-                            <a href="https://www.upwork.com/freelancers/~0156dbf67a8031770f?mp_source=share" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#14a800] text-white px-5 py-2.5 rounded-lg font-bold border-2 border-purple-900 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(88,28,135,1)] transition-all h-[44px]">
+                            {/* Upwork Button */}
+                            <a href="https://www.upwork.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#14a800] text-white px-5 py-2.5 rounded-lg font-bold border-2 border-purple-900 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(88,28,135,1)] transition-all h-[44px]">
                                 <img src="https://cdn.simpleicons.org/upwork/white" alt="Upwork" className="w-5 h-5" />
                                 Upwork
                             </a>
 
-                            {/* Contra Button (Flat default, shadow on hover) */}
-                            <a href="https://contra.com/mian_m_jahanzaib" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#111111] text-white px-5 py-2.5 rounded-lg font-bold border-2 border-purple-900 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(88,28,135,1)] transition-all h-[44px]">
+                            {/* Contra Button */}
+                            <a href="https://contra.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#111111] text-white px-5 py-2.5 rounded-lg font-bold border-2 border-purple-900 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(88,28,135,1)] transition-all h-[44px]">
                                 <svg className="w-4 h-4 text-[#FFD700]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12 0C12 6.62742 17.3726 12 24 12C17.3726 12 12 17.3726 12 24C12 17.3726 6.62742 12 0 12C6.62742 12 12 6.62742 12 0Z" />
                                 </svg>
                                 Contra
                             </a>
 
-                            {/* Freelancer Button (Flat default, shadow on hover) */}
-                            <a href="https://www.freelancer.pk/u/mmjdeveloper?sb=t&frm=mmjdeveloper" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#29b2fe] text-white px-5 py-2.5 rounded-lg font-bold border-2 border-purple-900 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(88,28,135,1)] transition-all h-[44px]">
+                            {/* Freelancer Button */}
+                            <a href="https://www.freelancer.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#29b2fe] text-white px-5 py-2.5 rounded-lg font-bold border-2 border-purple-900 hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(88,28,135,1)] transition-all h-[44px]">
                                 <img src="https://cdn.simpleicons.org/freelancer/white" alt="Freelancer" className="w-5 h-5" />
                                 Freelancer
                             </a>

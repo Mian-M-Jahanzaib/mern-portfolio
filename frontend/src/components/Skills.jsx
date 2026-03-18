@@ -22,13 +22,11 @@ const Skills = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 className="text-amber-900 text-[28px] font-bold leading-tight tracking-[-0.015em] pb-10 text-center uppercase"
             >
-                My Tech Stack & Skills
+                Tech Stack & Skills
             </motion.h2>
             
-            {/* Updated grid to handle 6 items perfectly */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                {/* Card 1: Frontend Ecosystem */}
                 <div className="group bg-white border-2 border-amber-900 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#78350f]">
                     <div className="w-14 h-14 bg-amber-200 border-2 border-amber-900 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <span className="material-symbols-outlined text-amber-900 text-3xl">monitor</span>
@@ -42,7 +40,6 @@ const Skills = () => {
                     </div>
                 </div>
 
-                {/* Card 2: Backend Architecture */}
                 <div className="group bg-white border-2 border-amber-900 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#78350f]">
                     <div className="w-14 h-14 bg-amber-200 border-2 border-amber-900 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <span className="material-symbols-outlined text-amber-900 text-3xl">terminal</span>
@@ -56,7 +53,6 @@ const Skills = () => {
                     </div>
                 </div>
 
-                {/* Card 3: Databases */}
                 <div className="group bg-white border-2 border-amber-900 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#78350f]">
                     <div className="w-14 h-14 bg-amber-200 border-2 border-amber-900 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <span className="material-symbols-outlined text-amber-900 text-3xl">database</span>
@@ -70,7 +66,6 @@ const Skills = () => {
                     </div>
                 </div>
 
-                {/* Card 4: DevOps & Deployment */}
                 <div className="group bg-white border-2 border-amber-900 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#78350f]">
                     <div className="w-14 h-14 bg-amber-200 border-2 border-amber-900 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <span className="material-symbols-outlined text-amber-900 text-3xl">rocket_launch</span>
@@ -84,7 +79,6 @@ const Skills = () => {
                     </div>
                 </div>
 
-                {/* Card 5: Currently Exploring */}
                 <div className="group bg-white border-2 border-amber-900 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#78350f]">
                     <div className="w-14 h-14 bg-amber-200 border-2 border-amber-900 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <span className="material-symbols-outlined text-amber-900 text-3xl">explore</span>
@@ -98,7 +92,6 @@ const Skills = () => {
                     </div>
                 </div>
 
-                {/* Card 6: Soft Skills */}
                 <div className="group bg-white border-2 border-amber-900 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_#78350f]">
                     <div className="w-14 h-14 bg-amber-200 border-2 border-amber-900 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <span className="material-symbols-outlined text-amber-900 text-3xl">lightbulb</span>

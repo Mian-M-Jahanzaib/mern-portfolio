@@ -33,9 +33,8 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Helper to handle smooth scroll on mobile
     const handleMobileNavClick = () => {
-        setMobileMenuOpen(false); // 1. Close menu first
+        setMobileMenuOpen(false); 
     };
 
   return (
@@ -46,7 +45,7 @@ const Navbar = () => {
                 {/* Logo */}
                 <div className="bg-yellow-300 border-2 border-slate-800 px-3 py-1 -rotate-2 hover:rotate-0 transition-transform cursor-pointer shadow-[2px_2px_0px_0px_rgba(30,41,59,1)] z-50">
                     <a href="#home" className="text-slate-900 text-xl font-black uppercase tracking-tighter block">
-                        M_M_Jahanzaib
+                        Dev_Portfolio
                     </a>
                 </div>
 
@@ -83,24 +82,21 @@ const Navbar = () => {
         <AnimatePresence>
             {mobileMenuOpen && (
                 <>
-                    {/* 1. Backdrop Overlay (Darkens the rest of the screen) */}
                     <motion.div 
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        onClick={() => setMobileMenuOpen(false)} // Close if clicking outside
+                        onClick={() => setMobileMenuOpen(false)} 
                         className="fixed inset-0 bg-black/50 z-[60] backdrop-blur-sm"
                     />
 
-                    {/* 2. The Side Drawer (Pops in from Right) */}
                     <motion.div 
-                        initial={{ x: "100%" }} // Start off-screen right
-                        animate={{ x: 0 }}      // Slide to position
-                        exit={{ x: "100%" }}    // Slide back out
+                        initial={{ x: "100%" }} 
+                        animate={{ x: 0 }}      
+                        exit={{ x: "100%" }}    
                         transition={{ type: "spring", damping: 25, stiffness: 200 }}
                         className="fixed top-0 right-0 h-full w-[75%] max-w-sm bg-white border-l-4 border-slate-800 z-[70] shadow-2xl flex flex-col"
                     >
-                        {/* Drawer Header with Close Button */}
                         <div className="flex justify-between items-center p-6 border-b-4 border-slate-800 bg-yellow-50">
                             <h2 className="text-xl font-black uppercase text-slate-900">Menu</h2>
                             <button 
@@ -111,7 +107,6 @@ const Navbar = () => {
                             </button>
                         </div>
 
-                        {/* Links List */}
                         <div className="flex flex-col p-6 gap-4 overflow-y-auto">
                             {navItems.map((item) => {
                                 const isActive = activeSection === item.name.toLowerCase();
@@ -123,7 +118,7 @@ const Navbar = () => {
                                         className={`
                                             block w-full py-4 text-center font-black uppercase tracking-wider border-2 border-slate-800 rounded-xl shadow-[4px_4px_0px_0px_rgba(30,41,59,1)] transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
                                             ${isActive 
-                                                ? getActiveMobileStyle(item.name) // Use helper function for colors
+                                                ? getActiveMobileStyle(item.name) 
                                                 : 'bg-white text-slate-900 hover:bg-slate-100'
                                             }
                                         `}
@@ -141,7 +136,6 @@ const Navbar = () => {
   )
 }
 
-// Helper function to return the correct "Active" colors for the mobile buttons
 function getActiveMobileStyle(name) {
     switch(name) {
         case 'Home': return 'bg-blue-500 text-white';

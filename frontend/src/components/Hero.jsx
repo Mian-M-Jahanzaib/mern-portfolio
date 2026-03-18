@@ -51,26 +51,24 @@ const Hero = () => {
             <div className="relative mx-auto w-60 h-60 mb-6">
                 <div className="absolute inset-0 bg-yellow-300 border-4 border-slate-800 rounded-[30%_70%_70%_30%/30%_30%_70%_70%] rotate-6 shadow-[4px_4px_0px_0px_rgba(30,41,59,1)]"></div>
                 <div className="relative w-full h-full rounded-full border-4 border-slate-800 overflow-hidden bg-gray-300 z-10 bg-cover bg-center"
-                     style={{ backgroundImage: "url('/profile.jpeg')" }}>
+                     style={{ backgroundImage: "url('/dummy-profile.png')" }}>
                 </div>
             </div>
 
             {/* Text */}
             <h1 className="text-3xl md:text-5xl font-black mb-4 text-slate-900 uppercase tracking-tight">
-                I'm <span className="text-primary relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-blue-100 before:z-[-1]">Mian Muhammad Jahanzaib</span>
+                I'm <span className="text-primary relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-blue-100 before:z-[-1]">[Your Name]</span>
             </h1>
             
-            {/* UPDATED: Removed "Enthusiast" and made it sound authoritative */}
             <p className="text-xl md:text-2xl font-bold text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
                 Full-Stack Web Developer | <span className="text-purple-600">MERN & Core PHP Specialist</span>.
             </p>
 
             {/* Buttons */}
             <div className="flex justify-center gap-6">
-                {/* IMPORTANT: Make sure your new CV PDF is named exactly mmj_cv.pdf */}
                 <a 
-                    href="/mmj_cv.pdf" 
-                    download="MMJ_CV.pdf"
+                    href="/dummy_cv.pdf" 
+                    download="Resume.pdf"
                     className="bg-primary border-4 border-slate-800 text-white px-8 py-3 rounded-xl font-black uppercase tracking-wider shadow-[4px_4px_0px_0px_rgba(30,41,59,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
                 >
                     Download CV
@@ -84,7 +82,6 @@ const Hero = () => {
                 </a>
             </div>
 
-            {/* UPDATED: Slightly punched up to sound more engineering-focused */}
             <p className="mt-8 text-slate-500 text-sm font-bold tracking-wide uppercase opacity-90">
                 Architecting scalable web apps • Available for hire
             </p>
