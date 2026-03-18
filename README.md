@@ -1,65 +1,72 @@
-# 🚀 Personal Portfolio | Full Stack MERN
+# 🚀 Modern Neo-Brutalist Portfolio Template | MERN Stack
 
-A modern, high-performance personal portfolio website built with the MERN stack (MongoDB, Express, React, Node.js). Designed with a unique "Neo-Brutalist" UI using Tailwind CSS and Framer Motion for smooth, interactive animations.
+A fully responsive, high-performance personal portfolio template built with the MERN stack (MongoDB, Express, React, Node.js). Engineered with a striking "Neo-Brutalist" UI using Tailwind CSS and Framer Motion for smooth, interactive animations. 
 
-## 🔗 Live Demo
-[View Live Site](https://mian-m-jahanzaib.onrender.com)
+This repository serves as a complete, full-stack foundation for developers looking to showcase their work with a custom backend contact system.
 
 ## 🛠️ Tech Stack
 * **Frontend:** React.js, Tailwind CSS, Framer Motion, Vite
 * **Backend:** Node.js, Express.js
 * **Database:** MongoDB
-* **Deployment:** Render
+* **Security:** Helmet, Express Rate Limit, CORS
 
 ## ✨ Key Features
-* **Neo-Brutalist Design:** Bold borders, high contrast, and sharp shadows for a unique, standout aesthetic.
+* **Neo-Brutalist Design:** Bold borders, high contrast, and sharp shadows for a unique, standout aesthetic that breaks away from standard corporate templates.
 * **Smooth Animations:** Scroll spy navigation, hover effects, and page transitions powered by Framer Motion.
-* **Dynamic Projects Section:** Showcasing featured work including Full Stack applications (HabitGrid), PHP (DigiSphere), and C++ systems.
-* **Functional Contact Form:** Securely processes and handles messages via the Express backend.
-* **Performance Optimized:** Fast load times with optimized asset delivery, lazy-loaded images, and async decoding.
+* **Modular Architecture:** Easily customizable React components for Skills, Experience, and Featured Projects.
+* **Functional Backend Contact Form:** Securely processes and handles messages via the Express backend, writing directly to a MongoDB database.
+* **Production-Ready Security:** Pre-configured with rate limiting to prevent spam and Helmet to secure HTTP headers.
 * **Fully Responsive:** Flawless user experience across all desktop, tablet, and mobile devices.
 
 ## 💻 Local Setup
-To run this project locally, follow these steps:
+To run this project locally or use it as your own portfolio, follow these steps:
 
 ### Prerequisites
 * [Node.js](https://nodejs.org/) installed
-* MongoDB cluster (Atlas) or local instance
+* A free [MongoDB Atlas](https://cloud.mongodb.com/) account or local MongoDB instance
 
 ### Installation
 1. Clone the repository:
-
-        git clone https://github.com/Mian-M-Jahanzaib/mern-portfolio.git
+   ```bash
+   git clone [https://github.com/Mian-M-Jahanzaib/mern-portfolio.git](https://github.com/Mian-M-Jahanzaib/mern-portfolio.git)
+   ```
 
 2. Install Backend Dependencies:
-
-        cd backend
-        npm install
+   ```bash
+   cd backend
+   npm install
+   ```
 
 3. Install Frontend Dependencies:
-
-        cd ../frontend
-        npm install
+   ```bash
+   cd ../frontend
+   npm install
+   ```
 
 ### Environment Variables
-Create a `.env` file in the `backend` directory. You will need to add your own MongoDB URI:
+Create a `.env` file in the `backend` directory. You will need to add your own MongoDB connection string:
 
-        PORT=5000
-        MONGO_URI=your_mongodb_connection_string
-
-*(Note: Never commit your `.env` file to GitHub)*
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string_here
+FRONTEND_URL=http://localhost:5173
+```
+*(Note: Never commit your `.env` file to version control.)*
 
 ### Running the Application
 1. Start the Backend server:
-
-        cd backend
-        node server.js
+   ```bash
+   cd backend
+   npm start
+   ```
 
 2. Start the Frontend development server (in a new terminal):
+   ```bash
+   cd frontend
+   npm run dev
+   ```
 
-        cd frontend
-        npm run dev
-
-## 👨‍💻 Author
+## 👨‍💻 Created By
 **Mian Muhammad Jahanzaib**
-* **LinkedIn:** [Mian M Jahanzaib](https://linkedin.com/in/mian-m-jahanzaib-7b8aa7357)
+* **LinkedIn:** [Mian M Jahanzaib](https://linkedin.com/in/mian-m-jahanzaib)
+* Feel free to clone, modify, and use this template for your own full-stack portfolio!
